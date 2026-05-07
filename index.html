@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Военный юрист — Защита прав военнослужащих и их семей</title>
+  <meta name="description" content="Юридическая помощь военнослужащим: выплаты за ранение и гибель, увольнение со службы, смена категории годности, защита в суде. Консультация бесплатно." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════ SVG SPRITE ══════════════════════════ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- scales -->
+  <symbol id="ico-scales" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="3" x2="12" y2="21"/>
+    <path d="M3 21h18"/>
+    <path d="M7.5 9L4.5 17h6l-3-8z"/>
+    <path d="M16.5 9l-3 8h6l-3-8z"/>
+    <line x1="7.5" y1="9" x2="12" y2="4"/>
+    <line x1="16.5" y1="9" x2="12" y2="4"/>
+  </symbol>
+  <!-- check (bold, for hero list) -->
+  <symbol id="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </symbol>
+  <!-- phone -->
+  <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 01-1.72 2 19.8 19.8 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.8 19.8 0 01.01 2.14 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+  </symbol>
+  <!-- x-circle (pain) -->
+  <symbol id="ico-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="15" y1="9" x2="9" y2="15"/>
+    <line x1="9" y1="9" x2="15" y2="15"/>
+  </symbol>
+  <!-- shield-plus (service: injury) -->
+  <symbol id="ico-shield-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    <line x1="12" y1="9" x2="12" y2="15"/>
+    <line x1="9" y1="12" x2="15" y2="12"/>
+  </symbol>
+  <!-- heart (service: death payments) -->
+  <symbol id="ico-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+  </symbol>
+  <!-- file-text (service: dismissal) -->
+  <symbol id="ico-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/>
+    <polyline points="10 9 9 9 8 9"/>
+  </symbol>
+  <!-- activity (service: VVK) -->
+  <symbol id="ico-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+  </symbol>
+  <!-- gavel (service: court) -->
+  <symbol id="ico-gavel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 14l6.16 6.16a1.5 1.5 0 01-2.12 2.12L12 16.12"/>
+    <path d="M15.41 10.58L10.59 5.76 4.23 12.12 9.05 16.94l6.36-6.36z"/>
+    <line x1="2" y1="22" x2="9" y2="15"/>
+    <path d="M10.59 5.76L12 4.35a2 2 0 012.83 0l4.83 4.83a2 2 0 010 2.83L18.24 13.4"/>
+  </symbol>
+  <!-- message-square (service: consult) -->
+  <symbol id="ico-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+  </symbol>
+  <!-- arrow-right -->
+  <symbol id="ico-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"/>
+    <polyline points="12 5 19 12 12 19"/>
+  </symbol>
+  <!-- clock -->
+  <symbol id="ico-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="12 6 12 12 16 14"/>
+  </symbol>
+  <!-- award / medal -->
+  <symbol id="ico-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="6"/>
+    <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+  </symbol>
+  <!-- globe -->
+  <symbol id="ico-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="2" y1="12" x2="22" y2="12"/>
+    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+  </symbol>
+  <!-- lock -->
+  <symbol id="ico-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+    <path d="M7 11V7a5 5 0 0110 0v4"/>
+  </symbol>
+  <!-- phone-call (about) -->
+  <symbol id="ico-phone-call" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15.05 5A5 5 0 0119 8.95M15.05 1A9 9 0 0123 8.94m-1 7.98v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+  </symbol>
+  <!-- star filled -->
+  <symbol id="ico-star" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+  </symbol>
+  <!-- map-pin -->
+  <symbol id="ico-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </symbol>
+  <!-- gift / free -->
+  <symbol id="ico-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 12 20 22 4 22 4 12"/>
+    <rect x="2" y="7" width="20" height="5"/>
+    <line x1="12" y1="22" x2="12" y2="7"/>
+    <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/>
+    <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>
+  </symbol>
+  <!-- check-circle (trust badges) -->
+  <symbol id="ico-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+    <polyline points="22 4 12 14.01 9 11.01"/>
+  </symbol>
+</svg>
+
+<!-- ══════════════════════════ HEADER ══════════════════════════ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#" class="logo">
+      <div class="logo__icon">
+        <svg width="22" height="22"><use href="#ico-scales"/></svg>
+      </div>
+      <div class="logo__text">
+        <span class="logo__title">Военный Юрист</span>
+        <span class="logo__sub">Защита прав с 2015 года</span>
+      </div>
+    </a>
+    <nav class="header__nav">
+      <a href="#services">Услуги</a>
+      <a href="#results">Результаты</a>
+      <a href="#about">О нас</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a href="tel:+78001234567" class="header__phone">
+      <span class="header__phone-label">Бесплатно, круглосуточно</span>
+      <span class="header__phone-number">8 800 123-45-67</span>
+    </a>
+    <a href="#form" class="btn btn--outline header__cta">Консультация</a>
+    <button class="burger" aria-label="Меню" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMobile()">Услуги</a>
+    <a href="#results" onclick="closeMobile()">Результаты</a>
+    <a href="#about" onclick="closeMobile()">О нас</a>
+    <a href="#faq" onclick="closeMobile()">Вопросы</a>
+    <a href="tel:+78001234567" class="mobile-menu__phone">
+      <svg width="18" height="18"><use href="#ico-phone"/></svg>
+      8 800 123-45-67
+    </a>
+    <a href="#form" class="btn btn--primary" onclick="closeMobile()">Получить консультацию</a>
+  </nav>
+</header>
+
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="badge-dot"></span>
+        Консультация — бесплатно и без обязательств
+      </div>
+      <h1 class="hero__title">
+        Защитим права военнослужащих<br />
+        <span class="accent">и их семей в любой ситуации</span>
+      </h1>
+      <p class="hero__desc">
+        Отказали в выплатах за ранение? Незаконно увольняют? Нужно сменить категорию годности?
+        Мы знаем, как это решить — более <strong>800 выигранных дел</strong> за 9 лет практики.
+      </p>
+      <ul class="hero__list">
+        <li>
+          <span class="check-icon"><svg width="11" height="11"><use href="#ico-check"/></svg></span>
+          Выплаты за ранение и гибель — добьёмся даже при отказе
+        </li>
+        <li>
+          <span class="check-icon"><svg width="11" height="11"><use href="#ico-check"/></svg></span>
+          Смена категории годности после ВВК
+        </li>
+        <li>
+          <span class="check-icon"><svg width="11" height="11"><use href="#ico-check"/></svg></span>
+          Законное увольнение со службы
+        </li>
+        <li>
+          <span class="check-icon"><svg width="11" height="11"><use href="#ico-check"/></svg></span>
+          Защита в военном суде
+        </li>
+      </ul>
+      <div class="hero__actions">
+        <a href="#form" class="btn btn--primary btn--large">Получить бесплатную консультацию</a>
+        <a href="tel:+78001234567" class="btn btn--ghost btn--large">
+          <svg width="18" height="18"><use href="#ico-phone"/></svg>
+          8 800 123-45-67
+        </a>
+      </div>
+      <p class="hero__note">Ответим в течение 15 минут · Работаем по всей России</p>
+    </div>
+    <div class="hero__form-wrap">
+      <div class="hero__form-card">
+        <div class="form-card__top">
+          <h3>Получите бесплатную консультацию</h3>
+          <p>Разберём вашу ситуацию и скажем, что делать прямо сейчас</p>
+        </div>
+        <form class="hero__form" onsubmit="submitForm(event)">
+          <div class="field">
+            <input type="text" placeholder="Ваше имя *" required />
+          </div>
+          <div class="field">
+            <input type="tel" placeholder="Номер телефона *" required />
+          </div>
+          <div class="field">
+            <select>
+              <option value="" disabled selected>Выберите тему обращения</option>
+              <option>Отказ в выплатах за ранение</option>
+              <option>Выплаты в случае гибели</option>
+              <option>Увольнение со службы</option>
+              <option>Смена категории годности (ВВК)</option>
+              <option>Защита в суде</option>
+              <option>Другой вопрос</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            Получить консультацию бесплатно
+          </button>
+          <p class="form-note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ STATS ══════════════════════════ -->
+<section class="stats">
+  <div class="container stats__grid">
+    <div class="stat-item">
+      <div class="stat-item__number" data-target="800" data-suffix="+">800+</div>
+      <div class="stat-item__label">выигранных дел</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-item__number">9 лет</div>
+      <div class="stat-item__label">практики в военном праве</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-item__number" data-target="94" data-suffix="%">94%</div>
+      <div class="stat-item__label">успешных решений в пользу клиента</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-item__number">120 млн ₽</div>
+      <div class="stat-item__label">взысканы для наших клиентов</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ PAIN ══════════════════════════ -->
+<section class="pain section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Узнаёте себя?</p>
+      <h2>Эти ситуации — не тупик.<br />Это — наша работа</h2>
+    </div>
+    <div class="pain__grid">
+      <div class="pain-card">
+        <div class="pain-card__icon">
+          <svg width="18" height="18"><use href="#ico-x"/></svg>
+        </div>
+        <p>Подали документы на выплаты за ранение, но получили отказ или затягивают сроки без объяснений</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">
+          <svg width="18" height="18"><use href="#ico-x"/></svg>
+        </div>
+        <p>Командование давит и принуждает подписать рапорт об увольнении, угрожая негативными последствиями</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">
+          <svg width="18" height="18"><use href="#ico-x"/></svg>
+        </div>
+        <p>ВВК поставила категорию, не соответствующую реальному состоянию здоровья — не знаете, как оспорить</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">
+          <svg width="18" height="18"><use href="#ico-x"/></svg>
+        </div>
+        <p>Военнослужащий погиб, а семье отказывают в положенных выплатах или тянут процесс месяцами</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">
+          <svg width="18" height="18"><use href="#ico-x"/></svg>
+        </div>
+        <p>Получили повестку или обвинение по военной статье, не знаете, что делать и куда обращаться</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card__icon">
+          <svg width="18" height="18"><use href="#ico-x"/></svg>
+        </div>
+        <p>Нарушены права во время службы: не выплачивается довольствие, нет положенного снаряжения</p>
+      </div>
+    </div>
+    <div class="pain__cta">
+      <p>Любая из этих ситуаций решаема. Расскажите — разберём на бесплатной консультации.</p>
+      <a href="#form" class="btn btn--primary btn--large">Рассказать о ситуации</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ SERVICES ══════════════════════════ -->
+<section class="services section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Наши услуги</p>
+      <h2>Помогаем военнослужащим<br />и их семьям по всем направлениям</h2>
+    </div>
+    <div class="services__grid">
+
+      <div class="service-card service-card--featured">
+        <div class="service-card__num">01</div>
+        <div class="service-card__icon">
+          <svg width="32" height="32"><use href="#ico-shield-plus"/></svg>
+        </div>
+        <h3>Выплаты за ранение и травму</h3>
+        <p>Добьёмся страховых и компенсационных выплат, даже если уже получили отказ. Оспорим акт медосвидетельствования, соберём доказательную базу, подготовим жалобы.</p>
+        <ul class="service-list">
+          <li>Страховые выплаты по ФЗ-52</li>
+          <li>Единовременные выплаты ДМС</li>
+          <li>Оспаривание отказа в суде</li>
+          <li>Взыскание морального вреда</li>
+        </ul>
+        <a href="#form" class="service-card__link">
+          Получить помощь
+          <svg width="14" height="14"><use href="#ico-arrow"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__num">02</div>
+        <div class="service-card__icon">
+          <svg width="32" height="32"><use href="#ico-heart"/></svg>
+        </div>
+        <h3>Выплаты в случае гибели</h3>
+        <p>Помогаем семьям получить все положенные выплаты и льготы. Если отказали — обжалуем и добьёмся через суд.</p>
+        <ul class="service-list">
+          <li>Страховые выплаты семье</li>
+          <li>Пенсия по потере кормильца</li>
+          <li>Льготы для детей и супруга</li>
+          <li>Оспаривание отказа страховщика</li>
+        </ul>
+        <a href="#form" class="service-card__link">
+          Получить помощь
+          <svg width="14" height="14"><use href="#ico-arrow"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__num">03</div>
+        <div class="service-card__icon">
+          <svg width="32" height="32"><use href="#ico-file"/></svg>
+        </div>
+        <h3>Увольнение со службы</h3>
+        <p>Защитим от незаконного увольнения или поможем уволиться законно с сохранением всех льгот и выплат.</p>
+        <ul class="service-list">
+          <li>Оспаривание незаконного увольнения</li>
+          <li>Законное расторжение контракта</li>
+          <li>Сохранение льгот и выслуги</li>
+          <li>Восстановление в должности</li>
+        </ul>
+        <a href="#form" class="service-card__link">
+          Получить помощь
+          <svg width="14" height="14"><use href="#ico-arrow"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__num">04</div>
+        <div class="service-card__icon">
+          <svg width="32" height="32"><use href="#ico-activity"/></svg>
+        </div>
+        <h3>Смена категории годности</h3>
+        <p>Оспорим заключение ВВК и добьёмся пересмотра категории в соответствии с реальным состоянием здоровья.</p>
+        <ul class="service-list">
+          <li>Жалоба на заключение ВВК</li>
+          <li>Независимая военно-медицинская экспертиза</li>
+          <li>Обжалование в суде</li>
+          <li>Смена категории после службы</li>
+        </ul>
+        <a href="#form" class="service-card__link">
+          Получить помощь
+          <svg width="14" height="14"><use href="#ico-arrow"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__num">05</div>
+        <div class="service-card__icon">
+          <svg width="32" height="32"><use href="#ico-gavel"/></svg>
+        </div>
+        <h3>Защита в суде</h3>
+        <p>Представляем интересы военнослужащих и их семей в военных судах и судах общей юрисдикции по всей России.</p>
+        <ul class="service-list">
+          <li>Гарнизонные и окружные военные суды</li>
+          <li>Суды общей юрисдикции</li>
+          <li>Дисциплинарные разбирательства</li>
+          <li>Апелляции и кассации</li>
+        </ul>
+        <a href="#form" class="service-card__link">
+          Получить помощь
+          <svg width="14" height="14"><use href="#ico-arrow"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card service-card--consult">
+        <div class="service-card__icon service-card__icon--chat">
+          <svg width="36" height="36"><use href="#ico-chat"/></svg>
+        </div>
+        <h3>Не нашли свой вопрос?</h3>
+        <p>Военное право охватывает сотни ситуаций. Расскажите о своей — разберёмся и дадим конкретный ответ.</p>
+        <a href="#form" class="btn btn--primary btn--full">Задать вопрос бесплатно</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ HOW ══════════════════════════ -->
+<section class="how section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Как мы работаем</p>
+      <h2>От первого звонка до результата</h2>
+    </div>
+    <div class="how__steps">
+      <div class="step">
+        <div class="step__num">1</div>
+        <div class="step__body">
+          <h4>Бесплатная консультация</h4>
+          <p>Рассказываете о ситуации — мы анализируем и сразу говорим, есть ли перспектива и что делать.</p>
+        </div>
+      </div>
+      <div class="step__sep">
+        <svg width="24" height="24"><use href="#ico-arrow"/></svg>
+      </div>
+      <div class="step">
+        <div class="step__num">2</div>
+        <div class="step__body">
+          <h4>Стратегия и документы</h4>
+          <p>Разрабатываем план действий, собираем доказательную базу, готовим жалобы и исковые заявления.</p>
+        </div>
+      </div>
+      <div class="step__sep">
+        <svg width="24" height="24"><use href="#ico-arrow"/></svg>
+      </div>
+      <div class="step">
+        <div class="step__num">3</div>
+        <div class="step__body">
+          <h4>Ведём дело</h4>
+          <p>Представляем ваши интересы в ведомствах, страховых компаниях и суде. Держим в курсе каждого шага.</p>
+        </div>
+      </div>
+      <div class="step__sep">
+        <svg width="24" height="24"><use href="#ico-arrow"/></svg>
+      </div>
+      <div class="step">
+        <div class="step__num">4</div>
+        <div class="step__body">
+          <h4>Получаете результат</h4>
+          <p>Выплаты, восстановление прав, нужная категория годности — фиксируем итог и закрываем дело.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ RESULTS ══════════════════════════ -->
+<section class="results section" id="results">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Наши результаты</p>
+      <h2>Реальные дела — реальные победы</h2>
+    </div>
+    <div class="results__grid">
+
+      <div class="result-card">
+        <div class="result-card__tag">Выплаты за ранение</div>
+        <div class="result-card__sum">3 200 000 ₽</div>
+        <p class="result-card__desc">Военнослужащему отказали в страховой выплате, сославшись на «неверно оформленные документы». Оспорили отказ в суде, доказали вину страховщика — взыскали полную сумму плюс штраф.</p>
+        <div class="result-card__time">
+          <svg width="14" height="14"><use href="#ico-clock"/></svg>
+          Срок дела: 4 месяца
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-card__tag">Выплаты семье</div>
+        <div class="result-card__sum">5 800 000 ₽</div>
+        <p class="result-card__desc">Вдова военнослужащего обратилась после года безрезультатных попыток получить страховку. Восстановили все документы, доказали боевое ранение как причину гибели — страховщик выплатил.</p>
+        <div class="result-card__time">
+          <svg width="14" height="14"><use href="#ico-clock"/></svg>
+          Срок дела: 6 месяцев
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-card__tag">Категория годности</div>
+        <div class="result-card__sum">Категория «В»</div>
+        <p class="result-card__desc">ВВК присвоила категорию «Б» несмотря на подтверждённые диагнозы. Добились повторного освидетельствования, предоставили независимую экспертизу — категорию изменили.</p>
+        <div class="result-card__time">
+          <svg width="14" height="14"><use href="#ico-clock"/></svg>
+          Срок дела: 3 месяца
+        </div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-card__tag">Незаконное увольнение</div>
+        <div class="result-card__sum">Восстановлен</div>
+        <p class="result-card__desc">Офицера уволили в период лечения, нарушив закон. Подали иск — суд признал увольнение незаконным, восстановили в должности с выплатой денежного довольствия за всё время.</p>
+        <div class="result-card__time">
+          <svg width="14" height="14"><use href="#ico-clock"/></svg>
+          Срок дела: 5 месяцев
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ ABOUT ══════════════════════════ -->
+<section class="about section" id="about">
+  <div class="container about__inner">
+    <div class="about__text">
+      <p class="section-tag">О нас</p>
+      <h2>Юристы, которые знают военное право изнутри</h2>
+      <p class="about__lead">Наша команда специализируется исключительно на военном праве. Среди нас — бывшие военные прокуроры, офицеры запаса и юристы с многолетним опытом в военных судах.</p>
+      <div class="about__facts">
+        <div class="about-fact">
+          <div class="about-fact__icon">
+            <svg width="24" height="24"><use href="#ico-award"/></svg>
+          </div>
+          <div>
+            <strong>Узкая специализация</strong>
+            <p>Занимаемся только военным правом — знаем все законы, практику судов и уловки страховщиков</p>
+          </div>
+        </div>
+        <div class="about-fact">
+          <div class="about-fact__icon">
+            <svg width="24" height="24"><use href="#ico-globe"/></svg>
+          </div>
+          <div>
+            <strong>Работаем по всей России</strong>
+            <p>Ведём дела дистанционно в любом регионе. Выезжаем в суд при необходимости</p>
+          </div>
+        </div>
+        <div class="about-fact">
+          <div class="about-fact__icon">
+            <svg width="24" height="24"><use href="#ico-lock"/></svg>
+          </div>
+          <div>
+            <strong>Конфиденциальность</strong>
+            <p>Соблюдаем полную тайну обращения. Ваши данные и детали дела не раскрываем третьим лицам</p>
+          </div>
+        </div>
+        <div class="about-fact">
+          <div class="about-fact__icon">
+            <svg width="24" height="24"><use href="#ico-phone-call"/></svg>
+          </div>
+          <div>
+            <strong>На связи 24/7</strong>
+            <p>Отвечаем на звонки и сообщения в любое время. Срочная консультация — в течение 15 минут</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about__trust">
+      <div class="trust-box">
+        <h4>Наша гарантия</h4>
+        <p>Если мы беремся за дело — значит, видим реальный путь к победе. Оплата только за результат во многих категориях дел.</p>
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg width="14" height="14"><use href="#ico-check-circle"/></svg>
+            Адвокатский ордер
+          </div>
+          <div class="trust-badge">
+            <svg width="14" height="14"><use href="#ico-check-circle"/></svg>
+            Член Адвокатской палаты
+          </div>
+          <div class="trust-badge">
+            <svg width="14" height="14"><use href="#ico-check-circle"/></svg>
+            Договор с гарантиями
+          </div>
+        </div>
+      </div>
+      <div class="reviews">
+        <h4>Отзывы клиентов</h4>
+        <div class="review-item">
+          <div class="review-stars">
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+          </div>
+          <p>«Отказали в выплате три раза. После обращения к вам — получили всё через суд за 4 месяца. Спасибо огромное.»</p>
+          <div class="review-author">— Наталья К., Ростов-на-Дону</div>
+        </div>
+        <div class="review-item">
+          <div class="review-stars">
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+          </div>
+          <p>«Помогли уволиться по состоянию здоровья с сохранением всех льгот. Всё объяснили, провели от и до.»</p>
+          <div class="review-author">— Алексей М., Воронеж</div>
+        </div>
+        <div class="review-item">
+          <div class="review-stars">
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+            <svg width="15" height="15"><use href="#ico-star"/></svg>
+          </div>
+          <p>«Мужа незаконно уволили. Восстановили в должности и взыскали зарплату за всё время. Профессионалы.»</p>
+          <div class="review-author">— Светлана В., Краснодар</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ FAQ ══════════════════════════ -->
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Вопросы и ответы</p>
+      <h2>Отвечаем на частые вопросы</h2>
+    </div>
+    <div class="faq__list">
+
+      <details class="faq-item">
+        <summary>Сколько стоят ваши услуги?</summary>
+        <div class="faq-item__body">
+          <p>Первичная консультация — бесплатно. Стоимость ведения дела зависит от его сложности и объёма работы. По ряду категорий дел (страховые выплаты) работаем по системе «гонорар успеха» — вы платите только при положительном результате. Точную стоимость называем после ознакомления с материалами.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Работаете ли вы с регионами? Я нахожусь далеко.</summary>
+        <div class="faq-item__body">
+          <p>Да, работаем по всей России дистанционно. Консультации, подготовка документов, переписка с ведомствами — всё онлайн. В судебных заседаниях участвуем лично или через доверенных партнёров в вашем регионе. Расстояние — не препятствие.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Нам уже отказали в выплатах — есть ли смысл обращаться?</summary>
+        <div class="faq-item__body">
+          <p>Да, и часто именно такие дела мы выигрываем. Отказ страховой компании или ведомства — не финальное решение. Большинство отказов незаконны или необоснованны. Через суд мы добиваемся выплат, а также штрафа и компенсации расходов. Расскажите о ситуации — оценим перспективы.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Можно ли оспорить заключение ВВК, если прошло уже несколько месяцев?</summary>
+        <div class="faq-item__body">
+          <p>Можно, если не истёк срок исковой давности. Суды нередко восстанавливают его при наличии уважительных причин. Важно не затягивать — обратитесь как можно скорее для оценки ситуации.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Как происходит консультация? Нужно ли приезжать к вам?</summary>
+        <div class="faq-item__body">
+          <p>Нет, приезжать не обязательно. Консультируем по телефону, WhatsApp, Telegram или видеосвязи. Оставьте заявку — мы перезвоним в удобное время. Первый разговор займёт 20–40 минут: вы рассказываете, мы слушаем и даём конкретные рекомендации.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Родственник военнослужащего — вы помогаете семьям?</summary>
+        <div class="faq-item__body">
+          <p>Да, большая часть наших клиентов — именно родственники: супруги, дети, родители военнослужащих. Помогаем получить страховые выплаты в случае гибели, оформить льготы и пенсии, добиться справедливости в суде. Обращайтесь.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ FORM ══════════════════════════ -->
+<section class="form-section section" id="form">
+  <div class="container">
+    <div class="form-section__inner">
+      <div class="form-section__text">
+        <h2>Получите бесплатную<br />юридическую консультацию</h2>
+        <p>Расскажите о вашей ситуации — мы перезвоним в течение 15 минут, разберём вопрос и объясним, что делать дальше. Без обязательств.</p>
+        <div class="form-guarantees">
+          <div class="fg-item">
+            <svg width="22" height="22"><use href="#ico-clock"/></svg>
+            Ответ за 15 минут
+          </div>
+          <div class="fg-item">
+            <svg width="22" height="22"><use href="#ico-lock"/></svg>
+            Конфиденциально
+          </div>
+          <div class="fg-item">
+            <svg width="22" height="22"><use href="#ico-gift"/></svg>
+            Бесплатно
+          </div>
+          <div class="fg-item">
+            <svg width="22" height="22"><use href="#ico-pin"/></svg>
+            По всей России
+          </div>
+        </div>
+        <div class="form-contacts">
+          <a href="tel:+78001234567" class="form-phone">8 800 123-45-67</a>
+          <span class="form-phone-label">Бесплатный звонок, круглосуточно</span>
+          <div class="messengers">
+            <a href="#" class="messenger-btn messenger-btn--wa">WhatsApp</a>
+            <a href="#" class="messenger-btn messenger-btn--tg">Telegram</a>
+          </div>
+        </div>
+      </div>
+      <div class="form-section__form">
+        <form onsubmit="submitForm(event)">
+          <div class="field">
+            <label>Ваше имя *</label>
+            <input type="text" placeholder="Иван Иванов" required />
+          </div>
+          <div class="field">
+            <label>Телефон *</label>
+            <input type="tel" placeholder="+7 (___) ___-__-__" required />
+          </div>
+          <div class="field">
+            <label>Тема обращения</label>
+            <select>
+              <option value="" disabled selected>Выберите тему</option>
+              <option>Отказ в выплатах за ранение</option>
+              <option>Выплаты в случае гибели</option>
+              <option>Увольнение со службы</option>
+              <option>Смена категории годности (ВВК)</option>
+              <option>Защита в суде</option>
+              <option>Другой вопрос</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Кратко опишите ситуацию</label>
+            <textarea placeholder="Опишите вашу ситуацию — это поможет подготовиться к разговору" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full btn--large">
+            Отправить заявку на консультацию
+          </button>
+          <p class="form-note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>.<br />Ваши данные надёжно защищены.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__logo">
+      <a href="#" class="logo">
+        <div class="logo__icon">
+          <svg width="22" height="22"><use href="#ico-scales"/></svg>
+        </div>
+        <div class="logo__text">
+          <span class="logo__title">Военный Юрист</span>
+          <span class="logo__sub">Защита прав с 2015 года</span>
+        </div>
+      </a>
+      <p class="footer__desc">Юридическая помощь военнослужащим и их семьям по всей России</p>
+    </div>
+    <div class="footer__links">
+      <h5>Услуги</h5>
+      <a href="#services">Выплаты за ранение</a>
+      <a href="#services">Выплаты семье</a>
+      <a href="#services">Увольнение со службы</a>
+      <a href="#services">Смена категории годности</a>
+      <a href="#services">Защита в суде</a>
+    </div>
+    <div class="footer__contacts">
+      <h5>Контакты</h5>
+      <a href="tel:+78001234567">8 800 123-45-67</a>
+      <a href="mailto:info@voen-pravo.ru">info@voen-pravo.ru</a>
+      <p>Работаем 24/7 · По всей России</p>
+      <div class="messengers">
+        <a href="#" class="messenger-btn messenger-btn--wa">WhatsApp</a>
+        <a href="#" class="messenger-btn messenger-btn--tg">Telegram</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>© 2015–2026 Военный Юрист. Все права защищены.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Публичная оферта</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════ STICKY CTA ══════════════════════════ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="tel:+78001234567" class="sticky-cta__phone">
+    <svg width="20" height="20"><use href="#ico-phone"/></svg>
+    <span class="sticky-cta__text">
+      8 800 123-45-67
+      <small>Бесплатно</small>
+    </span>
+  </a>
+</div>
+
+<!-- ══════════════════════════ SUCCESS MODAL ══════════════════════════ -->
+<div class="modal-overlay" id="successModal" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal__icon">
+      <svg width="36" height="36"><use href="#ico-check-circle"/></svg>
+    </div>
+    <h3>Заявка отправлена</h3>
+    <p>Наш юрист перезвонит вам в течение <strong>15 минут</strong>. Приготовьтесь рассказать о вашей ситуации.</p>
+    <button class="btn btn--primary" onclick="closeModal()">Понятно</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* ── Mobile menu ── */
+function toggleMenu(btn) {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMobile() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  const burger = document.querySelector('.burger');
+  if (burger) burger.classList.remove('open');
+}
+
+/* ── Header scroll ── */
+const header = document.getElementById('header');
+const stickyCta = document.getElementById('stickyCta');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    header.classList.add('header--scrolled');
+    stickyCta.classList.add('visible');
+  } else {
+    header.classList.remove('header--scrolled');
+    stickyCta.classList.remove('visible');
+  }
+}, { passive: true });
+
+/* ── Form submit ── */
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById('successModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  e.target.reset();
+}
+function closeModal() {
+  document.getElementById('successModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+/* ── Phone mask ── */
+document.querySelectorAll('input[type="tel"]').forEach(input => {
+  input.addEventListener('input', function () {
+    let digits = this.value.replace(/\D/g, '');
+    if (digits.startsWith('8')) digits = '7' + digits.slice(1);
+    if (!digits.startsWith('7') && digits.length > 0) digits = '7' + digits;
+    let out = '';
+    if (digits.length > 0) out = '+7';
+    if (digits.length > 1) out += ' (' + digits.slice(1, 4);
+    if (digits.length > 4) out += ') ' + digits.slice(4, 7);
+    if (digits.length > 7) out += '-' + digits.slice(7, 9);
+    if (digits.length > 9) out += '-' + digits.slice(9, 11);
+    this.value = out;
+  });
+});
+
+/* ── Scroll fade-in ── */
+const fadeTargets = document.querySelectorAll(
+  '.service-card, .pain-card, .result-card, .step, .about-fact, .faq-item, .review-item, .stat-item, .trust-box'
+);
+fadeTargets.forEach(el => el.classList.add('will-fade'));
+
+const fadeObs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (!entry.isIntersecting) return;
+    const delay = (entry.target.dataset.fadeIdx || 0) * 60;
+    setTimeout(() => entry.target.classList.add('visible'), delay);
+    fadeObs.unobserve(entry.target);
+  });
+}, { threshold: 0.12 });
+
+fadeTargets.forEach((el, idx) => {
+  el.dataset.fadeIdx = idx % 5;
+  fadeObs.observe(el);
+});
+
+/* ── Animate stat numbers ── */
+const statEls = document.querySelectorAll('.stat-item__number[data-target]');
+const statObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting || entry.target.dataset.done) return;
+    entry.target.dataset.done = '1';
+    countUp(entry.target);
+  });
+}, { threshold: 0.5 });
+statEls.forEach(el => statObs.observe(el));
+
+function countUp(el) {
+  const target = +el.dataset.target;
+  const suffix = el.dataset.suffix || '';
+  const duration = 1400;
+  const t0 = performance.now();
+  function step(now) {
+    const p = Math.min((now - t0) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(ease * target).toLocaleString('ru-RU') + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
