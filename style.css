@@ -3,6 +3,8 @@
    ══════════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body { overflow-x: hidden; max-width: 100%; }
+
 :root {
   --navy:       #0a1628;
   --navy-2:     #112240;
@@ -1238,49 +1240,92 @@ input, select, textarea, button { font-family: inherit; }
    RESPONSIVE — 768px
    ══════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .section { padding: 60px 0; }
+  .section { padding: 56px 0; }
 
-  .header__nav    { display: none; }
-  .header__phone  { display: none; }
-  .header__cta    { display: none; }
-  .burger         { display: flex; }
+  /* Header */
+  .header__nav   { display: none; }
+  .header__phone { display: none; }
+  .header__cta   { display: none; }
+  .burger        { display: flex; }
+  .header__inner { gap: 12px; }
 
-  .hero { padding: 96px 0 56px; min-height: auto; }
-  .hero__title { font-size: clamp(26px,7vw,38px); }
-  .hero__actions { flex-direction: column; }
-  .hero__actions .btn { width: 100%; justify-content: center; }
+  /* Hero — основные фиксы обрезания */
+  .hero {
+    padding: 88px 0 48px;
+    min-height: auto;
+    /* clip фоновых псевдоэлементов */
+    overflow: hidden;
+  }
+  .hero__inner { gap: 36px; }
+  .hero__title {
+    font-size: clamp(24px, 6.5vw, 34px);
+    word-break: break-word;
+    hyphens: auto;
+  }
+  .hero__desc { font-size: 15px; }
+  .hero__badge { font-size: 12px; padding: 7px 13px; }
 
+  /* Кнопки в hero — вертикально, на всю ширину */
+  .hero__actions { flex-direction: column; gap: 10px; }
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 20px;
+  }
+  /* Убираем иконку из ghost-кнопки чтобы текст влезал */
+  .hero__actions .btn--ghost svg { display: none; }
+
+  /* Список в hero — нормальный перенос */
+  .hero__list li { font-size: 14px; }
+
+  /* Stats */
   .stats__grid { grid-template-columns: 1fr 1fr; gap: 20px; }
 
+  /* Pain */
   .pain__grid { grid-template-columns: 1fr; }
+  .pain__cta p { font-size: 15px; }
 
+  /* Services */
   .services__grid { grid-template-columns: 1fr; }
 
+  /* How */
   .how__steps { flex-direction: column; gap: 20px; }
   .step { min-width: 100%; }
   .step__sep { display: none; }
 
+  /* Results */
   .results__grid { grid-template-columns: 1fr; }
+  .result-card { padding: 24px 20px; }
 
+  /* About */
   .about__inner { grid-template-columns: 1fr; gap: 40px; }
 
+  /* Form section */
   .form-section__inner { grid-template-columns: 1fr; gap: 40px; }
-  .form-section__form { padding: 28px 20px; }
+  .form-section__form { padding: 24px 16px; }
   .form-guarantees { grid-template-columns: 1fr; gap: 12px; }
+  .form-phone { font-size: 22px; }
 
-  .footer__inner { grid-template-columns: 1fr; gap: 32px; padding: 40px 16px; }
+  /* Footer */
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 40px 16px;
+  }
   .footer__logo { grid-column: span 1; }
-  .footer__bottom-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
-
-  /* Compact sticky on mobile */
-  .sticky-cta__text { display: none; }
-  .sticky-cta__phone {
-    padding: 16px;
-    border-radius: 50%;
+  .footer__bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
-  .modal { padding: 32px 20px; }
-  .section-header { margin-bottom: 40px; }
+  /* Sticky CTA — только иконка */
+  .sticky-cta__text { display: none; }
+  .sticky-cta__phone { padding: 15px; border-radius: 50%; }
+
+  .modal { padding: 28px 20px; }
+  .section-header { margin-bottom: 36px; }
+  .section-header h2 { font-size: clamp(22px, 5.5vw, 30px); }
 }
 
 /* ══════════════════════════════════════════════════
@@ -1288,12 +1333,39 @@ input, select, textarea, button { font-family: inherit; }
    ══════════════════════════════════════════════════ */
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .stats__grid { grid-template-columns: 1fr; text-align: left; }
-  .stat-item { display: flex; align-items: baseline; gap: 12px; }
-  .stat-item__label { margin-bottom: 0; font-size: 12px; }
-  .hero__form { padding: 20px 16px; }
-  .form-card__top { padding: 20px 16px; }
+
+  /* Hero */
+  .hero { padding: 80px 0 40px; }
+  .hero__title { font-size: clamp(22px, 6vw, 28px); }
+  .hero__list { gap: 9px; }
+  .hero__form { padding: 18px 16px; }
+  .form-card__top { padding: 18px 16px; }
+
+  /* Stats — в одну колонку с числом и подписью рядом */
+  .stats__grid { grid-template-columns: 1fr; gap: 16px; }
+  .stat-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    text-align: left;
+    padding: 0 4px;
+  }
+  .stat-item__number { font-size: 26px; }
+  .stat-item__label  { font-size: 12px; }
+
+  /* Services */
+  .service-card { padding: 24px 20px; }
+
+  /* Trust badges */
   .trust-badges { flex-direction: column; }
-  .trust-badge { width: fit-content; }
+  .trust-badge  { width: fit-content; }
+
+  /* Messengers */
+  .messengers { flex-direction: column; }
+  .messenger-btn { text-align: center; }
+
+  /* Footer */
+  .footer__bottom-links { flex-direction: column; gap: 6px; }
+  .footer__desc { max-width: 100%; }
   .footer__bottom-links { flex-direction: column; gap: 8px; }
 }
