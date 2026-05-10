@@ -26,9 +26,32 @@ window.addEventListener('scroll', () => {
 /* ── Form submit ── */
 function submitForm(e) {
   e.preventDefault();
+  const form = e.target;
+
+  let name = '', phone = '', topic = '', message = '';
+  form.querySelectorAll('input[type="text"]').forEach(el => { name = el.value; });
+  form.querySelectorAll('input[type="tel"]').forEach(el => { phone = el.value; });
+  form.querySelectorAll('select').forEach(el => { topic = el.value; });
+  form.querySelectorAll('textarea').forEach(el => { message = el.value; });
+
+  const lines = [
+    '🔔 Новая заявка — воинское-право.рф',
+    '',
+    '👤 ' + name,
+    '📞 ' + phone,
+  ];
+  if (topic) lines.push('📋 ' + topic);
+  if (message) lines.push('💬 ' + message);
+
+  fetch('https://api.telegram.org/bot8611353051:AAGpkziuS0jSMfcJh2iFUuiIS7FtfjQL_sk/sendMessage', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: '-1003740978392', text: lines.join('\n') })
+  }).catch(() => {});
+
   document.getElementById('successModal').classList.add('open');
   document.body.style.overflow = 'hidden';
-  e.target.reset();
+  form.reset();
 }
 function closeModal() {
   document.getElementById('successModal').classList.remove('open');
