@@ -34,20 +34,35 @@ function submitForm(e) {
   form.querySelectorAll('select').forEach(el => { topic = el.value; });
   form.querySelectorAll('textarea').forEach(el => { message = el.value; });
 
-  const payload = {
+  const tgLines = [
+    'Новая заявка — воинское-право.рф',
+    '',
+    'Имя: ' + name,
+    'Телефон: ' + phone,
+  ];
+  if (topic) tgLines.push('Тема: ' + topic);
+  if (message) tgLines.push('Сообщение: ' + message);
+
+  fetch('https://api.telegram.org/bot8611353051:AAGpkziuS0jSMfcJh2iFUuiIS7FtfjQL_sk/sendMessage', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: '-1003740978392', text: tgLines.join('\n') })
+  }).catch(() => {});
+
+  const emailPayload = {
     _subject: 'Новая заявка — воинское-право.рф',
     _cc: 'artklimov77@yandex.com',
     _captcha: 'false',
     'Имя': name,
     'Телефон': phone,
   };
-  if (topic) payload['Тема'] = topic;
-  if (message) payload['Сообщение'] = message;
+  if (topic) emailPayload['Тема'] = topic;
+  if (message) emailPayload['Сообщение'] = message;
 
   fetch('https://formsubmit.co/ajax/prydovich@mail.ru', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(payload)
+    body: JSON.stringify(emailPayload)
   }).catch(() => {});
 
   document.getElementById('successModal').classList.add('open');
