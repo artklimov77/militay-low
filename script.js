@@ -34,19 +34,10 @@ function submitForm(e) {
   form.querySelectorAll('select').forEach(el => { topic = el.value; });
   form.querySelectorAll('textarea').forEach(el => { message = el.value; });
 
-  const lines = [
-    '🔔 Новая заявка — воинское-право.рф',
-    '',
-    '👤 ' + name,
-    '📞 ' + phone,
-  ];
-  if (topic) lines.push('📋 ' + topic);
-  if (message) lines.push('💬 ' + message);
-
-  fetch('https://api.telegram.org/bot8611353051:AAGpkziuS0jSMfcJh2iFUuiIS7FtfjQL_sk/sendMessage', {
+  fetch('send.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: '-1003740978392', text: lines.join('\n') })
+    body: JSON.stringify({ name, phone, topic, message })
   }).catch(() => {});
 
   document.getElementById('successModal').classList.add('open');
